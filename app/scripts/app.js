@@ -20,9 +20,9 @@ angular
 		controller: 'AboutCtrl'
 	})
 .when('/addproject', {
-  templateUrl: 'views/addproject.html',
-  controller: 'AddprojectCtrl'
-})
+	    templateUrl: 'views/addproject.html',
+	    controller: 'AddprojectCtrl'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});
