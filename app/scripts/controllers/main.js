@@ -5,6 +5,8 @@ angular.module('firstNgAppApp')
 
 	contacts.$bind($scope, 'contacts');
 
+	//$scope.contacts = contacts;
+
 	$scope.add = function(input){
 		$scope.contacts.$add({
 			name:input.name,
