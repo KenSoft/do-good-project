@@ -9,10 +9,10 @@ angular.module('firstNgAppApp')
 
 	$scope.add = function(input){
 		$scope.contacts.$add({
-			name:input.name,
-			tel: input.tel,
-			email:input.email,
-			bird:input.bird,
+			projectName:input.name,
+			where: input.tel,
+			detail:input.email,
+			when:input.bird,
 			status:1
 		});
 
