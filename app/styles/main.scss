@@ -97,3 +97,13 @@ body {
         border-bottom: 0;
     }
 }
+.wordwrap { 
+   white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
+   outline:#000000 solid 1px;
+   width:90%;
+   height:50px;
+}

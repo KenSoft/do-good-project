@@ -7,21 +7,36 @@
     <h3 class="text-muted">Do Good Project</h3>
 </div>
 
-<div class="row marketing">
-    <table border=1 ng-init="flt.status='1'">
-        <tr>
-            <th>Project Name</th>
-            <th>Where</th>
-            <th>Detail</th>
-            <th>When</th>
-        </tr>
-        <tr ng-repeat="contact in contacts">
-            <td>{{contact.projectName}}</td>
-            <td>{{contact.where}}</td>
-            <td>{{contact.detail}}</td>
-            <td>{{contact.when}}</td>
-        </tr>
-    </table>
+
+        <div ng-repeat="contact in contacts" ng-init="getComment(contact.projectName)">
+            <div style="outline:#000000 solid 2px;">
+                
+                    <h1>&nbsp;{{contact.projectName}}</h1>
+                    <h3>&nbsp;{{contact.where}}</h3>
+                    <p><b>&nbsp;&nbsp;{{contact.detail}}</b></p>
+                    <p>&nbsp;&nbsp;{{getDate(contact.when)}}</p>
+                    <p></p>
+                    <hr>
+                    <p></p>
+                    <input type="text" ng-model="comment" class="form-control" placeholder="Project Name" style="width:85%;display:inline-block">
+                    <button type="button" class="btn btn-primary" style="display:inline-block;width:14%" ng-click="add(comment,contact.projectName)">Submit</button>
+                    <p></p>
+                    <hr>
+                    <p></p>
+                    <h4>&nbsp;&nbsp;All Comment</h4>
+                    <p></p>
+                    <center>
+                    <div ng-repeat="comment in comments">
+                    <div style="outline:#000000 solid 1px;width:90%;height:50px;vertical-align: middle;line-height: 50px;">
+                    {{comment.comment}}
+                    </div>
+                    <p></p>
+                    </div>
+                    </center>
+                    
+            </div>
+        </div>
+
 
     <br>
     <br>

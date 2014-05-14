@@ -31,11 +31,57 @@ angular.module('firstNgAppApp')
 				callback(data);
 			});
 		},
+		addComment : function(comment,project,callback){
+	//		console.log(q);
+			$http({
+
+				method: 'POST',
+				url:'https://api.parse.com/1/classes/comment',
+				headers:
+				{
+					'X-Parse-Application-Id': appId,
+					'X-Parse-REST-API-Key': apiKey,
+					'Content-Type': 'application/json'
+				},
+				data: {
+					comment:comment,
+					project:project
+				}
+			})
+			.success(function(data) {
+				console.log(data);
+				callback(data);
+			});
+		},
 		getAll : function(callback){
 			console.log('GetAll');
 			$http({
 				method: 'GET',
 				url:'https://api.parse.com/1/classes/project',
+				headers:
+				{
+					'X-Parse-Application-Id': appId,
+					'X-Parse-REST-API-Key': apiKey,
+					'Content-Type': 'application/json'
+				}
+			})
+			.success(function(data) {
+				console.log(data);
+				console.log('success');
+				callback(data);
+			})
+			.error(function(data){
+				console.log('error'+data);
+			});
+		},
+		getAllComment : function(project,callback){
+			console.log('GetAll');
+			$http({
+				params: {
+            		where: {project:project}
+                },
+				method: 'GET',
+				url:'https://api.parse.com/1/classes/comment',
 				headers:
 				{
 					'X-Parse-Application-Id': appId,
