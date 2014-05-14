@@ -9,12 +9,12 @@ angular.module('firstNgAppApp')
 	});
 	$scope.getComment=function(project){
 		console.log(project);
-	Contacts.getAllComment(project,function(data){
-		console.log(data);
-		$scope.comments=data.results;
-		console.log($scope.comments);
-	});
-	}
+		Contacts.getAllComment(project,function(data){
+			console.log(data);
+			$scope.comments=data.results;
+			console.log($scope.comments);
+		});
+	};
 
 	$scope.getDate=function(object){
 		var date=new Date(object.iso);
@@ -28,5 +28,6 @@ angular.module('firstNgAppApp')
 			
 
 		});
+		window.location.reload();
 	};
 });

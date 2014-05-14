@@ -78,7 +78,7 @@ angular.module('firstNgAppApp')
 			console.log('GetAll');
 			$http({
 				params: {
-            		where: {project:project}
+					where: {project:project}
                 },
 				method: 'GET',
 				url:'https://api.parse.com/1/classes/comment',
