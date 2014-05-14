@@ -6,6 +6,7 @@ angular.module('firstNgAppApp')
 	$scope.add = function(input){
 		Contacts.addProject(input,function(data){
 			console.log(data);
+			
 
 		});
 	};

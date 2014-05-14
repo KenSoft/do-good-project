@@ -14,14 +14,12 @@
             <th>Where</th>
             <th>Detail</th>
             <th>When</th>
-            <th>Delete</th>
         </tr>
-        <tr ng-repeat="contact in contacts" ng-if="contact.status==1">
-            <td><input type="TEXT" ng-model="contact.name"></td>
-            <td>{{contact.tel}}</td>
-            <td>{{contact.email}}</td>
-            <td>{{contact.bird}}</td>
-            <td><a ng-click="delete(contact)">Delete</a></td>
+        <tr ng-repeat="contact in contacts">
+            <td>{{contact.projectName}}</td>
+            <td>{{contact.where}}</td>
+            <td>{{contact.detail}}</td>
+            <td>{{contact.when}}</td>
         </tr>
     </table>
 

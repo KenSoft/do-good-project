@@ -22,8 +22,8 @@ angular.module('firstNgAppApp')
 					projectName:data.projectName,
 					where:data.where,
 					detail:data.detail,
-					when:{"__type": "Date",
-            		"iso": data.when}
+					when:{'__type': 'Date',
+					'iso': data.when}
 				}
 			})
 			.success(function(data) {
