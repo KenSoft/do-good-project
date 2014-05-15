@@ -6,8 +6,28 @@
     </ul>
     <h3 class="text-muted">Do Good Project</h3>
 </div>
-<h1>{{detail.projectName}}</h1>
+<h1>&nbsp;{{detail.projectName}}</h1>
 <hr>
+<h3>&nbsp;{{detail.where}}</h3>
+<p><b>&nbsp;&nbsp;{{detail.detail}}</b></p>
+<p>&nbsp;&nbsp;{{getDate(detail.when)}}</p>   
+<hr>
+<p></p>
+<input type="text" ng-model="comment" class="form-control" placeholder="Project Name" style="width:85%;display:inline-block">
+<button type="button" class="btn btn-primary" style="display:inline-block;width:14%" ng-click="add(comment,detail.objectId)">Submit</button>
+<p></p>
+<hr>
+<p></p>
+<h4>&nbsp;&nbsp;All Comment</h4>
+<p></p>
+<center>
+<div ng-repeat="comment in comments">
+<div style="outline:#000000 solid 1px;width:90%;height:50px;vertical-align: middle;line-height: 50px;">
+{{comment.comment}}
+</div>
+<p></p>
+</div>
+</center>
 <div class="footer">
     <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
 </div>
