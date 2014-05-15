@@ -1,7 +1,10 @@
 'use strict';
 
 angular.module('firstNgAppApp')
-.controller('MainCtrl', function ($scope,Contacts) {
+.controller('MainCtrl', function ($scope,Contacts,$rootScope) {
+	if($rootScope.sessionId!=null){
+		$scope.view = 'login';
+	}
 	Contacts.getAll(function(data){
 		console.log(data);
 		$scope.contacts=data.results;

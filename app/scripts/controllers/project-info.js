@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('firstNgAppApp')
-.controller('ProjectInfoCtrl', function ($scope,$routeParams,Contacts) {
+.controller('ProjectInfoCtrl', function ($scope,$routeParams,Contacts,$rootScope) {
 	console.log($routeParams.projectId);
 	Contacts.getInfo($routeParams.projectId,function(data){
 		console.log(data.results);

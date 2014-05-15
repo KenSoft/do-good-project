@@ -3,8 +3,8 @@
         <li  class="active"><a ng-href="#">Home</a></li>
         <li><a ng-href="#/addproject">Add Project</a></li>
         <li><a ng-href="#/about">About Us</a></li>
-        <li><a ng-href="#/login">Login</a></li>
-        <li><a ng-href="#/register">Register</a></li>
+        <li><a ng-href="#/login" ng-hide="view=='login'">Login</a></li>
+        <li><a ng-href="#/register" ng-hide="view=='login'">Register</a></li>
     </ul>
     <h3 class="text-muted">Do Good Project</h3>
 </div>
@@ -22,14 +22,14 @@
 <p></p>
 <h4>&nbsp;&nbsp;All Comment</h4>
 <p></p>
-<center>
+
 <div ng-repeat="comment in comments">
 <div style="outline:#000000 solid 1px;width:90%;height:50px;vertical-align: middle;line-height: 50px;">
 {{comment.comment}}
 </div>
 <p></p>
 </div>
-</center>
+
 <div class="footer">
     <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
 </div>
