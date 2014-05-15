@@ -19,7 +19,11 @@ angular.module('firstNgAppApp')
 			console.log($scope.comments);
 		});
 	};
-
+	$scope.logout = function(){
+		$rootScope.sessionId=null;
+		$rootScope.username=null;
+		window.location=/#/;
+	}
 	$scope.getDate=function(object){
 		var date=new Date(object.iso);
 		console.log(date);

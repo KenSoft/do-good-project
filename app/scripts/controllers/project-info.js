@@ -21,6 +21,11 @@ angular.module('firstNgAppApp')
 			console.log(date);
 			return date.toDateString();
 		};
+		$scope.logout = function(){
+			$rootScope.sessionId=null;
+			$rootScope.username=null;
+			window.location=/#/;
+		}
 		$scope.add = function(comment,project){
 			console.log('working');
 			Contacts.addComment(comment,project,$rootScope.username,function(data){

@@ -13,5 +13,10 @@ angular.module('firstNgAppApp')
 			window.location=/#/;
 
 		});
+		$scope.logout = function(){
+			$rootScope.sessionId=null;
+			$rootScope.username=null;
+			window.location=/#/;
+		}
 	};
   });
