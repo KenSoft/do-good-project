@@ -98,6 +98,56 @@ angular.module('firstNgAppApp')
 				console.log('error'+data);
 			});
 		},
+		login : function(data,callback){
+			console.log('GetAll');
+			$http({
+				params: {
+					username:data.username,
+					password:data.password
+                },
+				method: 'GET',
+				url:'https://api.parse.com/1/login',
+				headers:
+				{
+					'X-Parse-Application-Id': appId,
+					'X-Parse-REST-API-Key': apiKey,
+					'Content-Type': 'application/json'
+				}
+			})
+			.success(function(data) {
+				console.log(data);
+				console.log('success');
+				callback(data);
+			})
+			.error(function(data){
+				console.log('error'+data);
+			});
+		},
+		register : function(data,callback){
+	//		console.log(q);
+			$http({
+
+				method: 'POST',
+				url:'https://api.parse.com/1/users',
+				headers:
+				{
+					'X-Parse-Application-Id': appId,
+					'X-Parse-REST-API-Key': apiKey,
+					'Content-Type': 'application/json'
+				},
+				data: {
+					username:data.username,
+					password:data.password,
+					email:data.email,
+					birthday:{'__type': 'Date',
+					'iso': data.birthday}
+				}
+			})
+			.success(function(data) {
+				console.log(data);
+				callback(data);
+			});
+		},
 		getInfo : function(project,callback){
 			console.log('GetAll');
 			$http({

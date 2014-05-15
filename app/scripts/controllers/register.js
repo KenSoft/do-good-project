@@ -1,10 +1,12 @@
 'use strict';
 
 angular.module('firstNgAppApp')
-  .controller('RegisterCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('RegisterCtrl', function ($scope,Contacts) {
+	$scope.add = function(input){
+		Contacts.register(input,function(data){
+			console.log(data);
+			
+
+		});
+	};
   });
