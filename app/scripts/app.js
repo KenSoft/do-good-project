@@ -19,7 +19,11 @@ angular
 		templateUrl: 'views/about.html',
 		controller: 'AboutCtrl'
 	})
-.when('/addproject', {
+	.when('/addproject', {
+	    templateUrl: 'views/addproject.html',
+	    controller: 'AddprojectCtrl'
+	})
+	.when('/project-info:projectname', {
 	    templateUrl: 'views/addproject.html',
 	    controller: 'AddprojectCtrl'
 	})
