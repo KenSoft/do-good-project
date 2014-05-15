@@ -11,21 +11,21 @@ angular.module('firstNgAppApp')
 			console.log(data);
 			$scope.comments=data.results;
 			console.log($scope.comments);
-	});
-	$scope.getDate=function(object){
-		var date=new Date(object.iso);
-		console.log(date);
-		return date.toDateString();
-	};
-	$scope.add = function(comment,project){
-		console.log('working');
-		Contacts.addComment(comment,project,function(data){
-			console.log(data);
-			
-
 		});
-		window.location.reload();
-	};
+		$scope.getDate=function(object){
+			var date=new Date(object.iso);
+			console.log(date);
+			return date.toDateString();
+		};
+		$scope.add = function(comment,project){
+			console.log('working');
+			Contacts.addComment(comment,project,function(data){
+				console.log(data);
+				window.location.reload();
 
-});
+			});
+			
+		};
+
+	});
 });
