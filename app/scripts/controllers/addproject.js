@@ -7,7 +7,7 @@ angular.module('firstNgAppApp')
 	}
 	$scope.add = function(input){
 		console.log(input);
-		Contacts.addProject(input,function(data){
+		Contacts.addProject(input,$rootScope.username,function(data){
 			console.log(data);
 			window.location=/#/;
 

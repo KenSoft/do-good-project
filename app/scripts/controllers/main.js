@@ -5,6 +5,7 @@ angular.module('firstNgAppApp')
 	if($rootScope.sessionId!=null){
 		$scope.view = 'login';
 	}
+	console.log($rootScope.username);
 	Contacts.getAll(function(data){
 		console.log(data);
 		$scope.contacts=data.results;

@@ -6,7 +6,7 @@ angular.module('firstNgAppApp')
 	var apiKey	= 'u0lb7443cosZ7GNjtBnVNAKfCg7GCiAVjlNXgG2S';
 
 	return {
-		addProject : function(data,callback){
+		addProject : function(data,user,callback){
 	//		console.log(q);
 			$http({
 
@@ -22,6 +22,7 @@ angular.module('firstNgAppApp')
 					projectName:data.projectName,
 					where:data.where,
 					detail:data.detail,
+					user:user,
 					when:{'__type': 'Date',
 					'iso': data.when}
 				}
@@ -31,7 +32,7 @@ angular.module('firstNgAppApp')
 				callback(data);
 			});
 		},
-		addComment : function(comment,project,callback){
+		addComment : function(comment,project,user,callback){
 	//		console.log(q);
 			$http({
 
@@ -45,7 +46,8 @@ angular.module('firstNgAppApp')
 				},
 				data: {
 					comment:comment,
-					project:project
+					project:project,
+					user:user
 				}
 			})
 			.success(function(data) {

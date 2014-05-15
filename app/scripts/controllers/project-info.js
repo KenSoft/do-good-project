@@ -2,6 +2,10 @@
 
 angular.module('firstNgAppApp')
 .controller('ProjectInfoCtrl', function ($scope,$routeParams,Contacts,$rootScope) {
+	if($rootScope.sessionId!=null){
+		$scope.view = 'login';
+	}
+	$scope.project=$routeParams.projectId;
 	console.log($routeParams.projectId);
 	Contacts.getInfo($routeParams.projectId,function(data){
 		console.log(data.results);
@@ -19,9 +23,14 @@ angular.module('firstNgAppApp')
 		};
 		$scope.add = function(comment,project){
 			console.log('working');
-			Contacts.addComment(comment,project,function(data){
+			Contacts.addComment(comment,project,$rootScope.username,function(data){
 				console.log(data);
-				window.location.reload();
+				//window.location='/#/project-info/' + $scope.project;
+				Contacts.getAllComment($routeParams.projectId,function(data){
+					console.log(data);
+					$scope.comments=data.results;
+					console.log($scope.comments);
+				});
 
 			});
 			
