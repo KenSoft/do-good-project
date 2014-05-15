@@ -97,6 +97,30 @@ angular.module('firstNgAppApp')
 			.error(function(data){
 				console.log('error'+data);
 			});
+		},
+		getInfo : function(project,callback){
+			console.log('GetAll');
+			$http({
+				params: {
+					where: {objectId:project}
+                },
+				method: 'GET',
+				url:'https://api.parse.com/1/classes/project',
+				headers:
+				{
+					'X-Parse-Application-Id': appId,
+					'X-Parse-REST-API-Key': apiKey,
+					'Content-Type': 'application/json'
+				}
+			})
+			.success(function(data) {
+				console.log(data);
+				console.log('success');
+				callback(data);
+			})
+			.error(function(data){
+				console.log('error'+data);
+			});
 		}
 	};
 }]);

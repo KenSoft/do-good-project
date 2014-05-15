@@ -8,32 +8,14 @@
 </div>
 
 
-        <div ng-repeat="contact in contacts" ng-init="getComment(contact.projectName)">
+        <div ng-repeat="contact in contacts">
             <div style="outline:#000000 solid 2px;">
                 
-                    <h1>&nbsp;{{contact.projectName}}</h1>
+                    <a href="/#/project-info/{{contact.objectId}}"><h1>&nbsp;{{contact.projectName}}</h1></a>
                     <h3>&nbsp;{{contact.where}}</h3>
                     <p><b>&nbsp;&nbsp;{{contact.detail}}</b></p>
-                    <p>&nbsp;&nbsp;{{getDate(contact.when)}}</p>
-                    <p></p>
-                    <hr>
-                    <p></p>
-                    <input type="text" ng-model="comment" class="form-control" placeholder="Project Name" style="width:85%;display:inline-block">
-                    <button type="button" class="btn btn-primary" style="display:inline-block;width:14%" ng-click="add(comment,contact.projectName)">Submit</button>
-                    <p></p>
-                    <hr>
-                    <p></p>
-                    <h4>&nbsp;&nbsp;All Comment</h4>
-                    <p></p>
-                    <center>
-                    <div ng-repeat="comment in comments">
-                    <div style="outline:#000000 solid 1px;width:90%;height:50px;vertical-align: middle;line-height: 50px;">
-                    {{comment.comment}}
-                    </div>
-                    <p></p>
-                    </div>
-                    </center>
-                    
+                    <p>&nbsp;&nbsp;{{getDate(contact.when)}}</p>        
+
             </div>
         </div>
 

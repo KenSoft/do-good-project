@@ -23,10 +23,10 @@ angular
 	    templateUrl: 'views/addproject.html',
 	    controller: 'AddprojectCtrl'
 	})
-.when('/project-info', {
-  templateUrl: 'views/project-info.html',
-  controller: 'ProjectInfoCtrl'
-})
+	.when('/project-info/:projectId', {
+		templateUrl: 'views/project-info.html',
+		controller: 'ProjectInfoCtrl'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});
