@@ -16,6 +16,11 @@ angular.module('firstNgAppApp')
 			$scope.comments=data.results;
 			console.log($scope.comments);
 		});
+		Contacts.getAllJoin($routeParams.projectId,function(data){
+			console.log(data);
+			$scope.joinlist=data.results;
+			console.log($scope.joinlist);
+		});
 		$scope.getDate=function(object){
 			var date=new Date(object.iso);
 			console.log(date);
@@ -35,6 +40,20 @@ angular.module('firstNgAppApp')
 					console.log(data);
 					$scope.comments=data.results;
 					console.log($scope.comments);
+				});
+
+			});
+			
+		};
+		$scope.join = function(project){
+			console.log('working');
+			Contacts.addJoin(project,$rootScope.username,function(data){
+				console.log(data);
+				//window.location='/#/project-info/' + $scope.project;
+				Contacts.getAllJoin($routeParams.projectId,function(data){
+					console.log(data);
+					$scope.joinlist=data.results;
+					console.log($scope.joinlist);
 				});
 
 			});

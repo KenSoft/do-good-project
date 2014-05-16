@@ -55,6 +55,28 @@ angular.module('firstNgAppApp')
 				callback(data);
 			});
 		},
+		addJoin : function(project,user,callback){
+	//		console.log(q);
+			$http({
+
+				method: 'POST',
+				url:'https://api.parse.com/1/classes/join',
+				headers:
+				{
+					'X-Parse-Application-Id': appId,
+					'X-Parse-REST-API-Key': apiKey,
+					'Content-Type': 'application/json'
+				},
+				data: {
+					project:project,
+					user:user
+				}
+			})
+			.success(function(data) {
+				console.log(data);
+				callback(data);
+			});
+		},
 		getAll : function(callback){
 			console.log('GetAll');
 			$http({
@@ -84,6 +106,30 @@ angular.module('firstNgAppApp')
                 },
 				method: 'GET',
 				url:'https://api.parse.com/1/classes/comment',
+				headers:
+				{
+					'X-Parse-Application-Id': appId,
+					'X-Parse-REST-API-Key': apiKey,
+					'Content-Type': 'application/json'
+				}
+			})
+			.success(function(data) {
+				console.log(data);
+				console.log('success');
+				callback(data);
+			})
+			.error(function(data){
+				console.log('error'+data);
+			});
+		},
+		getAllJoin : function(project,callback){
+			console.log(project);
+			$http({
+				params: {
+					where: {project:project}
+                },
+				method: 'GET',
+				url:'https://api.parse.com/1/classes/join',
 				headers:
 				{
 					'X-Parse-Application-Id': appId,
